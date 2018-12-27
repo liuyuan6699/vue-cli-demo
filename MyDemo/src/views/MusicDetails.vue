@@ -7,7 +7,7 @@
 
 <script>
 import Header from '../components/Header'
-import {getMusicDetails} from '../api/getData.js'
+// import {getMusicDetails} from '../api/getData.js'
 export default {
     data() {
         return {
@@ -19,11 +19,11 @@ export default {
         Header
     },
     created() {
-        let _this = this
-        _this.album_id = _this.$route.query.album_id;
-        getMusicDetails(_this.album_id).then(res=> {
-            console.log(res)
-        })
+        // let _this = this
+        // _this.album_id = _this.$route.query.album_id;
+        // getMusicDetails(_this.album_id).then(res=> {
+        //     console.log(res)
+        // })
     }
 }
 </script>

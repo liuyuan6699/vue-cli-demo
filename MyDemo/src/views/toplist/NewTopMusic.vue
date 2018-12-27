@@ -12,7 +12,7 @@
 </template>
 
 <script>
-import {getMusicTop, getMusicTopDetails} from '../../api/getData.js'
+// import {getMusicTop, getMusicTopDetails} from '../../api/getData.js'
 export default {
     data() {
         return {

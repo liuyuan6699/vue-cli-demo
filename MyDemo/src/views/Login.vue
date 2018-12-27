@@ -45,7 +45,8 @@ export default {
             console.log(this.formItem.password)
             this.$refs[name].validate((valid) => {
                 if (valid) {
-                    login('00d91e8e0cca2b76f515926a36db68f5', this.formItem.username, this.formItem.password).then(res=> {
+                    console.log(this.formItem)
+                    login(this.formItem).then(res=> {
                         console.log(res)
                     })
                 } else {

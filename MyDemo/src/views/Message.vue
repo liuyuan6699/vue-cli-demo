@@ -1,20 +1,7 @@
 <template>
     <div class="message">
         <Header :title="title"></Header>
-        <!-- <mt-search style='{zIndex: 999}' v-model="value">
-            <mt-cell
-                v-for="item in result"
-                :title="item.title"
-                :value="item.value"
-                :key="">
-            </mt-cell>
-        </mt-search> -->
-        <!-- <el-input
-            placeholder="请输入内容"
-            prefix-icon="el-icon-search"
-            v-model="inputValue">
-        </el-input> -->
-        <el-autocomplete
+        <!-- <el-autocomplete
             class="inline-input"
             prefix-icon="el-icon-search"
             v-model="inputValue"
@@ -32,43 +19,18 @@
                 <div class="title">{{ item.title }}</div>
                 <span class="author">{{ item.author }}</span>
             </template>
-        </el-autocomplete>
-        <!-- <template>
-            <div class="sh">
-                <i-input icon="ios-search" placeholder="请输入搜索内容..." 
-                v-model="inputValue" @on-change="getSearchList"></i-input>
-            </div>
-        </template> -->
-        <!-- <el-tabs v-model="activeName" @tab-click="handleClick">
-            
-            <el-tab-pane :label="item.name" :name="item.name" v-for="item in topList" :key="item.type" :type="item.type">
-                <transition enter-active-class="animated bounceInRight" leave-active-class="animated bounceOutLeft">
-                    <ul class="mui-table-view">
-                        <li class="mui-table-view-cell mui-media" v-for="ele in mList" :key="ele.album_id">
-                            <router-link :to="{path:'/MusicDetails',query:{album_id: ele.album_id}}">
-                                <img class="mui-media-object mui-pull-left" :src="ele.pic_small">
-                                <div class="mui-media-body">
-                                    {{ele.title}}
-                                    <p class='mui-ellipsis'>{{ele.author}}</p>
-                                </div>
-                            </router-link>
-                        </li>
-                    </ul> 
-                </transition>
-            </el-tab-pane> 
-            
-        </el-tabs> -->
-        
+        </el-autocomplete>   
+
         <template>
             <Tabs :active-key="1" @on-click="handleClick">
                 <Tab-pane :label="item.name"  v-for="(item,index) in topList" :key="item.type" :ref="index" :type="item.type">
                     <ul class="mui-table-view">
                         <li class="mui-table-view-cell mui-media" v-for="ele in mList" :key="ele.album_id">
                             <router-link :to="{path:'/MusicDetails',query:{album_id: ele.album_id}}">
-                                <!-- <img class="mui-media-object mui-pull-left" v-if="dImg" src="../assets/default.png"> -->
-                                <img class="mui-media-object mui-pull-left" :src="ele.pic_small">
-                                <!-- <img class="mui-media-object mui-pull-left" v-else src="../assets/default.png"> -->
-                                <div class="mui-media-body">
+                                <!<img class="mui-media-object mui-pull-left" v-if="dImg" src="../assets/default.png"> -->
+                                <!-- <img class="mui-media-object mui-pull-left" :src="ele.pic_small">
+                                <!<img class="mui-media-object mui-pull-left" v-else src="../assets/default.png"> -->
+                                <!-- <div class="mui-media-body">
                                     {{ele.title}}
                                     <p class="mui-ellipsis">{{ele.author}}</p>
                                 </div>
@@ -77,7 +39,7 @@
                     </ul>
                 </Tab-pane>
             </Tabs>
-        </template>
+        </template> -->
 
     </div>
 </template>
@@ -87,7 +49,7 @@
 import Router from 'vue-router'
 import Header from '../components/Header'
 // import NewTopMusic from './toplist/NewTopMusic'
-import {getMusicTop, getMusicTopDetails, getSearchMusic} from '../api/getData.js'
+// import {getMusicTop, getMusicTopDetails, getSearchMusic} from '../api/getData.js'
 
 export default {
     data() {
@@ -106,43 +68,43 @@ export default {
         }
     },
     methods: {
-        handleClick(tab, event) {
-            getMusicTopDetails(this.$refs[tab][0].$vnode.key).then(res=> {
-                this.mList = res.result;
-                dImg = false
-            })
-        },
-        getSearchList(queryString, cb) {
-            if(queryString=='') return false;
-            getSearchMusic(queryString).then(res=> {
-                console.log(res.result);
-                this.searchList = [];
-                res.result.filter((item,index)=> {
-                    return this.searchList.push({"title":item.title, "author":item.author})
-                })
-                console.log(this.searchList)
-                cb(this.searchList)
-            })
+        // handleClick(tab, event) {
+        //     getMusicTopDetails(this.$refs[tab][0].$vnode.key).then(res=> {
+        //         this.mList = res.result;
+        //         dImg = false
+        //     })
+        // },
+        // getSearchList(queryString, cb) {
+        //     if(queryString=='') return false;
+        //     getSearchMusic(queryString).then(res=> {
+        //         console.log(res.result);
+        //         this.searchList = [];
+        //         res.result.filter((item,index)=> {
+        //             return this.searchList.push({"title":item.title, "author":item.author})
+        //         })
+        //         console.log(this.searchList)
+        //         cb(this.searchList)
+        //     })
             
-        },
-        handleSelect(item) {
-            console.log(item)
-        },
-        handleIconClick(ev) {
-            console.log(ev);
-        }
+        // },
+        // handleSelect(item) {
+        //     console.log(item)
+        // },
+        // handleIconClick(ev) {
+        //     console.log(ev);
+        // }
     },
     mounted() {
-        let _this =this
-        _this.$store.state.title = _this.title;
-        getMusicTop().then(res=> {
-            if(res.code == 200) {
-                _this.topList = res.result
-            }
-        })
-        getMusicTopDetails(_this.selected).then(res=> {
-            _this.mList = res.result
-        })
+        // let _this =this
+        // _this.$store.state.title = _this.title;
+        // getMusicTop().then(res=> {
+        //     if(res.code == 200) {
+        //         _this.topList = res.result
+        //     }
+        // })
+        // getMusicTopDetails(_this.selected).then(res=> {
+        //     _this.mList = res.result
+        // })
     },
     components: {
         Header

@@ -48,6 +48,12 @@ export default {
                     console.log(this.formItem)
                     login(this.formItem).then(res=> {
                         console.log(res)
+                        if (res.data.err_code == 200) {
+                            localStorage.setItem('token', res.data.token)
+                            this.$router.push('/')
+                        }else {
+
+                        }
                     })
                 } else {
                     this.$Message.error('Fail!');

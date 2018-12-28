@@ -9,31 +9,31 @@
 
         <div class="mui-content">
             <ul class="mui-table-view mui-grid-view mui-grid-9">
-                <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3"><router-link to="/Menu">
+                <li class="mui-table-view-cell mui-media mui-col-xs-3 mui-col-sm-3"><router-link to="/Menu">
                         <span class="mui-icon mui-icon-home"></span>
                         <div class="mui-media-body">首页</div></router-link></li>
-                <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3"><router-link to="/Message">
+                <li class="mui-table-view-cell mui-media mui-col-xs-3 mui-col-sm-3"><router-link to="/Message">
                         <span class="mui-icon mui-icon-extra mui-icon-extra-custom"><span class="mui-badge">5</span></span>
                         <div class="mui-media-body">音乐</div></router-link></li>
-                <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3"><router-link to="/Chart">
+                <li class="mui-table-view-cell mui-media mui-col-xs-3 mui-col-sm-3"><router-link to="/Chart">
                         <span class="mui-icon mui-icon-extra mui-icon-extra-class"></span>
                         <div class="mui-media-body">分类</div></router-link></li>
-                <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3"><router-link to="#">
+                <li class="mui-table-view-cell mui-media mui-col-xs-3 mui-col-sm-3"><router-link to="#">
                         <span class="mui-icon mui-icon-location"></span>
                         <div class="mui-media-body">周边</div></router-link></li>
-                <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3"><router-link to="#">
+                <li class="mui-table-view-cell mui-media mui-col-xs-3 mui-col-sm-3"><router-link to="#">
                         <span class="mui-icon mui-icon-search"></span>
                         <div class="mui-media-body">搜索</div></router-link></li>
-                <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3"><router-link to="#">
+                <li class="mui-table-view-cell mui-media mui-col-xs-3 mui-col-sm-3"><router-link to="#">
                         <span class="mui-icon mui-icon-phone"></span>
                         <div class="mui-media-body">电话</div></router-link></li>
-                <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3"><router-link to="/Settings">
+                <li class="mui-table-view-cell mui-media mui-col-xs-3 mui-col-sm-3"><router-link to="/Settings">
                         <span class="mui-icon mui-icon-gear"></span>
                         <div class="mui-media-body">设置</div></router-link></li>
-                <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3"><router-link to="#">
+                <li class="mui-table-view-cell mui-media mui-col-xs-3 mui-col-sm-3"><router-link to="#">
                         <span class="mui-icon mui-icon-info"></span>
                         <div class="mui-media-body">关于</div></router-link></li>
-                <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3"><router-link to="#">
+                <li class="mui-table-view-cell mui-media mui-col-xs-3 mui-col-sm-3"><router-link to="#">
                         <span class="mui-icon mui-icon-more"></span>
                         <div class="mui-media-body">更多</div></router-link></li>
             </ul> 
@@ -73,5 +73,8 @@ export default {
 }
 .mint-swipe-item:last-of-type {
     background-color: deeppink;
+}
+.mui-grid-view.mui-grid-9 .mui-media .mui-icon {
+    font-size: 1.8rem;
 }
 </style>
